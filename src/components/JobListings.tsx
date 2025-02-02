@@ -2,8 +2,12 @@ import { useState, useEffect } from "react"
 import JobListing from "./JobListing"
 import Spinner from "./Spinner"
 
+interface Job {
+  id: number
+}
+
 const JobListings = ({ isHome = false }) => {
-  const [jobs, setJobs] = useState([])
+  const [jobs, setJobs] = useState<Job[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
